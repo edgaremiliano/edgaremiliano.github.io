@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cysar BIRDS - Clase 1: Introducción a las Aves</title>
+    <link rel="stylesheet" href="../css/clase-detalle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- HEADER PREMIUM -->
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <a href="dashboard.html">
+                    <img src="../img/logo-cysar-birds.png" alt="cysar BIRDS Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="dashboard.html" class="active">Mis Cursos</a></li>
+                    <li><a href="progreso.html">Mi Progreso</a></li>
+                    <li><a href="comunidad.html">Comunidad</a></li>
+                </ul>
+            </nav>
+            <a href="login.html" class="logout-btn">Cerrar Sesión</a>
+        </div>
+    </header>
+
+    <!-- GRID DE CLASE -->
+    <main class="class-detail-page">
+
+        <!-- VIDEO PREMIUM -->
+        <section class="video-player-section">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/Syzu_1iDBVI?rel=0&modestbranding=1&showinfo=0" title="Clase Gratuita Audubon" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- INFO DE LA CLASE -->
+        <section class="class-info-section">
+
+            <!-- INFO CARD: TÍTULO Y DESCRIPCIÓN -->
+            <div class="info-card">
+                <span class="class-number">CLASE 01</span>
+                <h1>Introducción al Mundo de las Aves</h1>
+                <div class="progress-tracker">
+                    <label for="class-progress">Progreso de la Clase</label>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
+                    <span>75% completado</span>
+                </div>
+                <p class="class-description">
+                    Sumérgete en el fascinante universo de la avifauna. En esta clase fundamental, sentamos las bases para tu viaje como observador de aves, explorando su diversidad, comportamiento y los ecosistemas que habitan.
+                </p>
+            </div>
+
+            <!-- INFO CARD: MATERIALES -->
+            <div class="info-card">
+                <h3>Materiales de la Clase</h3>
+                <ul class="materials-list">
+                    <li><a href="../material/guia-campo.pdf" download><i class="fas fa-book"></i>Guía de Campo (PDF)</a></li>
+                    <li><a href="../material/checklist-aves.pdf" download><i class="fas fa-check-square"></i>Checklist de Aves Locales</a></li>
+                    <li><a href="https://www.allaboutbirds.org" target="_blank"><i class="fas fa-external-link-alt"></i>Recurso Externo: All About Birds</a></li>
+                </ul>
+            </div>
+
+            <!-- INFO CARD: PUNTOS CLAVE -->
+            <div class="info-card">
+                <h3>Puntos Clave</h3>
+                <ul class="key-points-list">
+                    <li><i class="fas fa-feather-alt"></i>Identificación por plumaje y canto.</li>
+                    <li><i class="fas fa-binoculars"></i>Uso correcto de binoculares y guías.</li>
+                    <li><i class="fas fa-map-marked-alt"></i>Mejores hábitats para la observación.</li>
+                    <li><i class="fas fa-leaf"></i>Principios de conservación y ética.</li>
+                </ul>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- MODAL INSIGNIA -->
+    <div id="badgeModal" class="badge-unlocked-modal">
+        <div class="badge-card">
+            <button id="closeModal" class="close-button">&times;</button>
+            <div class="badge-icon">
+                <i class="fas fa-award"></i>
+            </div>
+            <h2>¡Insignia Desbloqueada!</h2>
+            <h3>Pionero Avian</h3>
+            <p>Has completado tu primera clase y demostrado tu pasión por las aves.</p>
+            <p class="badge-description">"El primer paso para un gran viaje."</p>
+            <div class="badge-collection-link">
+                <a href="insignias.html">Ver mi colección de insignias &rarr;</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/clase-detalle.js"></script>
+
+</body>
+
+</html>
