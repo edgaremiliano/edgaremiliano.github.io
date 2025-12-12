@@ -301,6 +301,17 @@ body.dark-theme {
     margin-bottom: 2.5rem;
 }
 
+.strike-number {
+    text-decoration: line-through;
+}
+
+.currency-side {
+    font-size: 0.65em;
+    /* más pequeño proporcionalmente */
+    opacity: 0.8;
+    margin-left: 4px;
+}
+
 
 /* --- Buttons --- */
 
