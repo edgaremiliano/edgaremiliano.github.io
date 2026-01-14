@@ -120,7 +120,7 @@
                 <div class="class-content">
                     <span class="class-number">Clase 04</span>
                     <h2>Alimentación Balanceada</h2>
-                    <p class="class-subtitle">Aprende sobre el alimento humedo y seco que tu periquito requiere para balancear su dieta. (y como hacer que sí se lo coma).</p>
+                    <p class="class-subtitle">Aprende sobre el alimento humedo y seco que tu periquito requiere para balancear su dieta. (y como hacer que sí se lo coma).</p>
                     <div class="class-progress">
                         <div class="progress-bar">
                             <div class="progress" style="width: 0%;"></div>
@@ -140,7 +140,7 @@
                 <div class="class-content">
                     <span class="class-number">Clase 04-2</span>
                     <h2>Rutinas y manejo de los tiempos</h2>
-                    <p class="class-subtitle">Lograr que se coman lo que les ofreces depende por completo del manejo de los tiempos, te explico…</p>
+                    <p class="class-subtitle">Lograr que se coman lo que les ofreces depende por completo del manejo de los tiempos, te explico…</p>
                     <div class="class-progress">
                         <div class="progress-bar">
                             <div class="progress" style="width: 0%;"></div>
@@ -256,6 +256,50 @@
             <!-- Añade más cursos aquí con la misma estructura -->
         </div>
     </main>
+    <!-- ===================== RESEÑA DEL CURSO ===================== -->
+    <section class="review-section" data-aos="fade-up">
+        <div class="review-form-container">
+            <div class="review-header">
+                <h2 class="review-title">Valoramos tu experiencia</h2>
+                <p class="review-subtitle">Cuéntame, ¿qué te pareció el curso?</p>
+            </div>
+
+            <form id="review-form" class="review-form">
+                <div class="form-group">
+                    <label for="review-name">Tu Nombre (público)</label>
+                    <input type="text" id="review-name" name="name" placeholder="Ej: Ana García" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Tu Calificación</label>
+                    <div class="star-rating-input">
+                        <i class="far fa-star" data-value="1"></i>
+                        <i class="far fa-star" data-value="2"></i>
+                        <i class="far fa-star" data-value="3"></i>
+                        <i class="far fa-star" data-value="4"></i>
+                        <i class="far fa-star" data-value="5"></i>
+                    </div>
+                    <input type="hidden" name="rating" id="rating-value" value="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="review-comment">Tu Comentario</label>
+                    <textarea id="review-comment" name="comment" rows="4" placeholder="¿Qué te ha parecido el curso?" required></textarea>
+                </div>
+
+                <button type="submit" class="cta-button">Enviar Valoración</button>
+                <p id="review-message" class="review-message"></p>
+            </form>
+        </div>
+
+        <div id="submitted-reviews-wrapper" class="submitted-reviews-wrapper" style="display: none;">
+            <h3 class="submitted-reviews-title">Valoraciones de la comunidad</h3>
+            <div id="submitted-reviews-grid" class="submitted-reviews-grid">
+                <!-- Las reseñas se insertarán aquí dinámicamente -->
+            </div>
+        </div>
+    </section>
+
 
     <footer class="premium-footer">
         <div class="footer-content">
@@ -311,6 +355,7 @@
             setupMobileMenu();
         });
     </script>
+    <script src="../js/cursos-reviews.js" defer></script>
 </body>
 
 
