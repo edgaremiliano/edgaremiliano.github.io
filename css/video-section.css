@@ -88,6 +88,13 @@ body.dark-theme {
     }
 }
 
+@keyframes star-appear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 /* --- Background glow --- */
 
@@ -270,19 +277,11 @@ body.dark-theme {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 1.5rem;
-}
-
-.original-price {
-    font-size: 2rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    text-decoration: line-through;
-    opacity: 0.7;
+    margin-bottom: 2rem;
 }
 
 .current-price {
-    font-size: 6rem;
+    font-size: 5rem;
     font-weight: 900;
     line-height: 1;
     color: var(--green-accent);
@@ -290,24 +289,20 @@ body.dark-theme {
     margin-bottom: 0.5rem;
 }
 
+.secondary-price {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    opacity: 0.8;
+}
+
 .glow-effect {
     display: inline-block;
     animation: priceBreathe 5s ease-in-out infinite;
 }
 
-.offer-deadline {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    margin-bottom: 2.5rem;
-}
-
-.strike-number {
-    text-decoration: line-through;
-}
-
 .currency-side {
-    font-size: 0.65em;
-    /* más pequeño proporcionalmente */
+    font-size: 0.5em;
     opacity: 0.8;
     margin-left: 4px;
 }
@@ -344,6 +339,143 @@ body.dark-theme {
     transition-duration: 0.1s;
 }
 
+.login-box .cta-button.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+
+/* --- Testimonials Section --- */
+
+.testimonials-section {
+    margin-top: 6rem;
+    position: relative;
+}
+
+.testimonials-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.testimonials-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.testimonials-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    align-items: start;
+}
+
+.review-card {
+    background: rgba(21, 24, 29, 0.6);
+    /* Darker glass */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 15px 40px var(--shadow-deep);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-align: left;
+    animation-delay: var(--animation-delay, 0s);
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px var(--shadow-deep), 0 0 80px -20px var(--green-shadow);
+}
+
+.review-card--featured {
+    grid-column: 1 / -1;
+    /* Ocupa todo el ancho */
+    background: rgba(25, 28, 34, 0.7);
+    border-color: rgba(46, 255, 123, 0.3);
+    transform: scale(1.02);
+}
+
+.review-card--featured:hover {
+    transform: scale(1.02) translateY(-10px);
+}
+
+.review-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.review-stars {
+    color: #FFD700;
+    font-size: 1.2rem;
+}
+
+.review-stars span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: star-appear 0.6s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.review-card.is-visible .review-stars span:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.review-card.is-visible .review-stars span:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.review-card.is-visible .review-stars span:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+.review-card.is-visible .review-stars span:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.review-card.is-visible .review-stars span:nth-child(5) {
+    animation-delay: 0.9s;
+}
+
+.review-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.review-card--featured .review-text {
+    font-size: 1.2rem;
+    color: #E2E8F0;
+    /* Ligeramente más claro */
+}
+
+.review-author {
+    text-align: right;
+}
+
+.author-name {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.author-role {
+    font-size: 0.9rem;
+    color: var(--green-accent);
+    opacity: 0.8;
+}
+
 
 /* --- Scroll Animations --- */
 
@@ -352,6 +484,7 @@ body.dark-theme {
     filter: blur(5px);
     transform: translateY(30px);
     transition: opacity 0.8s ease-out, filter 0.8s ease-out, transform 0.8s ease-out;
+    transition-delay: var(--animation-delay, 0s);
 }
 
 .animate-on-scroll.is-visible {
@@ -391,6 +524,9 @@ body.dark-theme {
     .login-box {
         padding: 2rem;
     }
+    .testimonials-title {
+        font-size: 2.2rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -411,5 +547,8 @@ body.dark-theme {
     .cta-button {
         font-size: 1.1rem;
         padding: 1rem 1.5rem;
+    }
+    .review-card {
+        padding: 2rem 1.5rem;
     }
 }
