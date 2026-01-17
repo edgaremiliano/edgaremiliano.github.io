@@ -25,6 +25,8 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     if (foundUser) {
         // Si el usuario es válido, establece el estado de la sesión.
         sessionStorage.setItem('isLoggedIn', 'true');
+        sessionStorage.setItem('username', foundUser.username);
+
         // Redirige a la página de cursos.
         window.location.href = 'cursos.html';
     } else {
