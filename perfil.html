@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - Cysar Birds</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2EFF7B">
+
+    <script type="module" src="js/session-check.js"></script>
+    <link rel="stylesheet" href="css/cursos.css">
+
+    <!-- Estilos específicos para perfil (en línea para no crear otro archivo extra pequeño) -->
+    <style>
+        .profile-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .profile-card {
+            background: linear-gradient(145deg, #1A1D22, #0F1115);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            background: rgba(46, 255, 123, 0.1);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--green-accent);
+            border: 2px solid var(--green-accent);
+            box-shadow: 0 0 20px var(--green-glow);
+        }
+        
+        .profile-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .profile-email {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            display: inline-block;
+        }
+        
+        .profile-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .btn-action {
+            padding: 1rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--green-accent);
+            color: #000;
+        }
+        
+        .btn-primary:hover {
+            box-shadow: 0 0 15px var(--green-glow);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--green-accent);
+            color: var(--green-accent);
+        }
+        
+        .btn-danger {
+            background-color: rgba(255, 71, 87, 0.1);
+            color: #ff4757;
+            margin-top: 1rem;
+        }
+        
+        .btn-danger:hover {
+            background-color: rgba(255, 71, 87, 0.2);
+        }
+        
+        .message-toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--green-accent);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="dark-theme">
+    <div class="background-glow"></div>
+
+    <header class="premium-header">
+        <div class="header-container">
+            <a href="cursos.html" class="home-icon" aria-label="Volver a Cursos">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <span class="logo">
+                <span class="super-title">MI PERFIL</span>
+            </span>
+            <div style="width: 24px;"></div>
+            <!-- Espaciador para centrar -->
+        </div>
+    </header>
+
+    <main class="profile-container">
+        <div class="profile-card">
+            <div class="profile-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+
+            <div class="profile-info">
+                <h2>Hola, Alumno</h2>
+                <p id="user-email-display" class="profile-email">Cargando correo...</p>
+            </div>
+
+            <div class="profile-actions">
+                <button id="reset-password-btn" class="btn-action btn-secondary">
+                    <i class="fas fa-key"></i> Cambiar Contraseña via Email
+                </button>
+
+                <a href="cursos.html" class="btn-action btn-primary">
+                    <i class="fas fa-graduation-cap"></i> Ir a mis Cursos
+                </a>
+
+                <button id="logout-btn-profile" class="btn-action btn-danger">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <div id="toast" class="message-toast">Correo enviado</div>
+
+    <script type="module" src="js/perfil.js"></script>
+    <script>
+        // Registro de Service Worker para PWA (necesario en cada página nueva)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js');
+            });
+        }
+    </script>
+</body>
+
+</html>

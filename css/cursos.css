@@ -1,0 +1,548 @@
+:root {
+    --green-accent: #2EFF7B;
+    --green-glow: rgba(46, 255, 123, 0.3);
+    --green-shadow: rgba(46, 255, 123, 0.25);
+    --text-primary: #FFFFFF;
+    --text-secondary: #A0AEC0;
+    --bg-dark: #0D0F12;
+    --card-bg: #15181D;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --shadow-deep: rgba(0, 0, 0, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.dark-theme {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.background-glow {
+    position: fixed;
+    top: -25%;
+    left: 50%;
+    width: 1200px;
+    height: 1200px;
+    background: radial-gradient(circle, var(--green-accent) 0%, transparent 65%);
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.06;
+    filter: blur(100px);
+}
+
+
+/* --- Header Premium --- */
+
+.premium-header {
+    background-color: rgba(13, 15, 18, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* Ícono de casa */
+
+.home-icon {
+    color: var(--green-accent);
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.home-icon:hover {
+    color: var(--text-primary);
+    text-shadow: 0 0 10px var(--green-glow);
+}
+
+
+/* Botón de cerrar sesión */
+
+.logout-btn {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    color: var(--green-accent);
+    text-shadow: 0 0 8px var(--green-glow);
+}
+
+.logo {
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.logo .super-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    display: block;
+}
+
+.logo .main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--text-primary);
+    text-shadow: 0 0 15px var(--green-glow);
+}
+
+.main-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--green-accent);
+    box-shadow: 0 0 12px var(--green-glow);
+}
+
+.header-actions .logout-btn {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.header-actions .logout-btn:hover {
+    color: var(--green-accent);
+}
+
+.mobile-menu-button,
+.mobile-menu {
+    display: none;
+}
+
+.progress-tracker {
+    width: 100%;
+}
+
+.progress-tracker label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    display: block;
+}
+
+.progress-bar {
+    height: 12px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.progress {
+    height: 100%;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #007AFF, #5856D6);
+    /* Azul corporativo premium */
+    transition: width 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0.6;
+}
+
+.progress-tracker span,
+.class-progress span {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 10px;
+    display: block;
+    text-align: right;
+}
+
+.class-progress {
+    margin-top: auto;
+    /* Empuja la barra de progreso hacia abajo */
+}
+
+.class-progress span {
+    text-align: left;
+    margin-top: 8px;
+}
+
+
+/* --- Dashboard --- */
+
+.course-dashboard-premium {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem 3rem;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.dashboard-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.8rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px var(--green-glow);
+}
+
+.dashboard-header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+
+/* --- Course List --- */
+
+.class-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.class-item {
+    background: linear-gradient(145deg, #1A1D22, #0F1115);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 25px var(--shadow-deep);
+    text-decoration: none;
+    color: var(--text-primary);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.class-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(46, 255, 123, 0.15), transparent 60%);
+    transform: skewX(-25deg);
+    transition: all 0.5s ease;
+    pointer-events: none;
+}
+
+.class-item:hover::before {
+    left: -10%;
+}
+
+.class-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px var(--shadow-deep), 0 0 50px var(--green-shadow);
+    border-color: var(--green-accent);
+}
+
+.class-thumbnail {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid var(--border-color);
+    transition: transform 0.4s ease;
+    background-color: #0d0f12;
+    /* Color de fondo mientras carga la imagen */
+}
+
+.class-item:hover .class-thumbnail {
+    transform: scale(1.05);
+}
+
+.class-content {
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.class-number {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--green-accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.class-content h2 {
+    font-size: 1.5rem;
+    margin: 0.25rem 0 0.5rem;
+}
+
+.class-content .class-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.class-progress {
+    margin-bottom: 1rem;
+}
+
+.class-progress span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 7px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 3.5px;
+    overflow: hidden;
+    margin-top: 0.25rem;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--green-accent);
+    border-radius: 3.5px;
+    box-shadow: 0 0 12px var(--green-glow);
+    transition: width 0.5s ease;
+}
+
+.class-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.class-meta i {
+    margin-right: 0.4rem;
+    color: var(--green-accent);
+}
+
+.class-item .class-meta span {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+/* ===================== LOADING SKELETON ===================== */
+
+
+/* Clase para indicar que el elemento está esperando datos */
+
+.item-loading .progress-bar,
+.item-loading .class-number,
+.item-loading h2,
+.item-loading .class-subtitle {
+    position: relative;
+    overflow: hidden;
+    /* Mantiene el espacio pero oculta texto temporalmente si se desea, 
+       o simplemente añadimos el brillo encima */
+}
+
+
+/* Efecto Shimmer específico para las barras de progreso */
+
+.progress-bar.loading {
+    background: #2D3748;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar.loading .progress {
+    width: 100% !important;
+    /* Llenar la barra para el efecto */
+    background: transparent;
+    box-shadow: none;
+}
+
+.progress-bar.loading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: skeleton-loading 1.5s infinite;
+}
+
+
+/* Animación de brillo pasando */
+
+@keyframes skeleton-loading {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
+/* Estado de texto "Cargando..." */
+
+.status-loading {
+    color: var(--text-secondary);
+    font-style: italic;
+    opacity: 0.7;
+    font-size: 0.8rem;
+}
+
+
+/* --- Footer --- */
+
+.premium-footer {
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.footer-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 8px var(--green-glow);
+}
+
+.footer-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.footer-contact span {
+    color: var(--text-secondary);
+    margin: 0 1rem;
+    transition: all 0.3s ease;
+}
+
+.footer-contact span:hover {
+    color: var(--green-accent);
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+
+/* --- Responsive --- */
+
+@media (max-width: 768px) {
+    .main-nav,
+    .header-actions {
+        display: none;
+    }
+    .mobile-menu-button {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--text-primary);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    .mobile-menu {
+        display: none;
+        background-color: var(--card-bg);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .mobile-menu.open {
+        display: block;
+    }
+    .mobile-menu ul {
+        list-style: none;
+        padding: 1rem 0;
+    }
+    .mobile-menu li a {
+        display: block;
+        padding: 1rem 2rem;
+        color: var(--text-primary);
+        text-decoration: none;
+    }
+    .mobile-menu li a:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+    .dashboard-header h1 {
+        font-size: 2.8rem;
+    }
+}
+
+
+/* ===== FIX INTERACCIÓN FORMULARIO RESEÑAS ===== */
+
+input,
+textarea,
+button,
+label {
+    pointer-events: auto;
+    user-select: text;
+}

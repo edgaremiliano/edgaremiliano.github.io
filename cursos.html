@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cysar BIRDS - Mis Cursos</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2EFF7B">
+    <link rel="apple-touch-icon" href="img/curso1.jpg">
+
+    <script type="module" src="js/session-check.js"></script>
+    <link rel="stylesheet" href="css/cursos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+</head>
+
+<body class="dark-theme">
+    <div class="background-glow"></div>
+
+    <header class="premium-header">
+        <div class="header-container">
+            <!-- Logo como ícono de casa -->
+            <a href="index.html" class="home-icon" aria-label="Inicio">
+                <i class="fas fa-home"></i>
+            </a>
+
+            <!-- Acciones derecha: Perfil + Logout -->
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+                <!-- Perfil -->
+                <a href="perfil.html" class="home-icon" style="font-size: 1.5rem;" aria-label="Mi Perfil">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+
+                <!-- Botón de cerrar sesión -->
+                <a href="#" id="logout-button" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="course-dashboard-premium">
+        <div class="dashboard-header" data-aos="fade-in">
+            <h1>Tu Biblioteca de Cursos</h1>
+            <p>En este curso aprenderás todo lo que necesitas para tener a tu periquito al cien.</p>
+        </div>
+
+        <!-- BLOQUE: Progreso total del curso -->
+        <div id="course-overview" class="course-overview" data-aos="fade-up">
+            <h2>Progreso del curso</h2>
+            <div class="progress-tracker" id="course-progress-tracker">
+                <label>Progreso total del curso</label>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 45%;"></div>
+                </div>
+                <span>45% completado</span>
+            </div>
+        </div>
+        <!-- /BLOQUE -->
+
+
+        <div class="class-list-container">
+            <!-- Clase 1 -->
+            <a href="clases/clase-detalle-1.html" class="class-item" data-aos="fade-up">
+                <div class="class-thumbnail lazy-bg" data-bg="img/curso1.jpg"></div>
+                <noscript><div class="class-thumbnail" style="background-image: url('img/curso1.jpg');"></div></noscript>
+                <div class="class-content">
+                    <span class="class-number">Clase 01</span>
+                    <h2>La Jaula</h2>
+                    <p class="class-subtitle">5 puntos clave para escoger la jaula ideal.</p>
+                    <div class="class-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%;"></div>
+                        </div>
+                        <span>Sin empezar</span>
+                    </div>
+                    <div class="class-meta">
+                        <span><i class="fas fa-clock"></i> 15 min</span>
+                        <span><i class="fas fa-layer-group"></i> Basico</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Clase 2 -->
+            <a href="clases/clase-detalle-2.html" class="class-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="class-thumbnail lazy-bg" data-bg="img/curso2.jpg"></div>
+                <noscript><div class="class-thumbnail" style="background-image: url('img/curso2.jpg');"></div></noscript>
+                <div class="class-content">
+                    <span class="class-number">Clase 02</span>
+                    <h2>Perchas y Juguetes</h2>
+                    <p class="class-subtitle">Aprende a identificar las perchas y juguetes adecuados.</p>
+                    <div class="class-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%;"></div>
+                        </div>
+                        <span>Sin empezar</span>
+                    </div>
+                    <div class="class-meta">
+                        <span><i class="fas fa-clock"></i> 18 min</span>
+                        <span><i class="fas fa-layer-group"></i> Basico</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Clase 3 -->
+            <a href="clases/clase-detalle-3.html" class="class-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="class-thumbnail lazy-bg" data-bg="img/curso3.jpg"></div>
+                <noscript><div class="class-thumbnail" style="background-image: url('img/curso3.jpg');"></div></noscript>
+                <div class="class-content">
+                    <span class="class-number">Clase 03</span>
+                    <h2>Forrajeo y Estimulación</h2>
+                    <p class="class-subtitle">Fomenta el comportamiento natural en la busqueda de alimento</p>
+                    <div class="class-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%;"></div>
+                        </div>
+                        <span>Sin empezar</span>
+                    </div>
+                    <div class="class-meta">
+                        <span><i class="fas fa-clock"></i> 11 min</span>
+                        <span><i class="fas fa-layer-group"></i> Basico</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Clase 4 -->
+            <a href="clases/clase-detalle-4.html" class="class-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="class-thumbnail lazy-bg" data-bg="img/curso4.jpg"></div>
+                <noscript><div class="class-thumbnail" style="background-image: url('img/curso4.jpg');"></div></noscript>
+                <div class="class-content">
+                    <span class="class-number">Clase 04</span>
+                    <h2>Alimentación Balanceada</h2>
+                    <p class="class-subtitle">Aprende sobre el alimento humedo y seco que tu periquito requiere para balancear su dieta. (y como hacer que sí se lo coma).</p>
+                    <div class="class-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%;"></div>
+                        </div>
+                        <span>Sin empezar</span>
+                    </div>
+                    <div class="class-meta">
+                        <span><i class="fas fa-clock"></i> 17 min</span>
+                        <span><i class="fas fa-layer-group"></i> Basico</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Clase 4-2 -->
+            <a href="clases/clase-detalle-4-2.html" class="class-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="class-thumbnail lazy-bg" data-bg="img/curso4-2.jpg"></div>
+                <noscript><div class="class-thumbnail" style="background-image: url('img/curso4-2.jpg');"></div></noscript>
+                <div class="class-content">
+                    <span class="class-number">Clase 04-2</span>
+                    <h2>Rutinas y manejo de los tiempos</h2>
+                    <p class="class-subtitle">Lograr que se coman lo que les ofreces depende por completo del manejo de los tiempos, te explico…</p>
+                    <div class="class-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%;"></div>
+                        </div>
+                        <span>Sin empezar</span>
+                    </div>
+                    <div class="class-meta">
+                        <span><i class="fas fa-clock"></i> 18</span>
+                        <span><i class="fas fa-layer-group"></i> Basico</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Clase 5 -->
+            <a href="clases/clase-detalle-5.html" class="class-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="class-thumbnail lazy-bg" data-bg="img/curso5.jpg"></div>
+                <noscript><div class="class-thumbnail" style="background-image: url('img/curso5.jpg');"></div></noscript>
+                <div class="class-content">
+                    <span class="class-number">Clase 05</span>
+                    <h2>El Baño</h2>
+                    <p class="class-subtitle">Aprende cuándo y cómo bañar a tu periquito + algunos tips</p>
+                    <div class="class-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%;"></div>
+                        </div>
+                        <span>Sin empezar</span>
+                    </div>
+                    <div class="class-meta">
+                        <span><i class="fas fa-clock"></i> 10 min</span>
+                        <span><i class="fas fa-layer-group"></i> Basico</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Clase 6 -->
+            <a href="clases/clase-detalle-6.html" class="class-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="class-thumbnail lazy-bg" data-bg="img/curso6.jpg"></div>
+                <noscript><div class="class-thumbnail" style="background-image: url('img/curso6.jpg');"></div></noscript>
+                <div class="class-content">
+                    <span class="class-number">Clase 06</span>
+                    <h2>Cuidados Nocturnos</h2>
+                    <p class="class-subtitle">Descubre como brindar un descanso seguro y reparador para tu periquito.</p>
+                    <div class="class-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%;"></div>
+                        </div>
+                        <span>Sin empezar</span>
+                    </div>
+                    <div class="class-meta">
+                        <span><i class="fas fa-clock"></i> 9 min</span>
+                        <span><i class="fas fa-layer-group"></i> Basico</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Clase 7 -->
+            <a href="clases/clase-detalle-7.html" class="class-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="class-thumbnail lazy-bg" data-bg="img/curso7.jpg"></div>
+                <noscript><div class="class-thumbnail" style="background-image: url('img/curso7.jpg');"></div></noscript>
+                <div class="class-content">
+                    <span class="class-number">Clase 07</span>
+                    <h2>Los Niveles</h2>
+                    <p class="class-subtitle">Aprende donde poner cada elemento de acuerdo a la psicología de tu periquito.</p>
+                    <div class="class-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%;"></div>
+                        </div>
+                        <span>Sin empezar</span>
+                    </div>
+                    <div class="class-meta">
+                        <span><i class="fas fa-clock"></i> 19 min</span>
+                        <span><i class="fas fa-layer-group"></i> Basico</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Clase 8 -->
+            <a href="clases/clase-detalle-8.html" class="class-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="class-thumbnail lazy-bg" data-bg="img/curso8.jpg"></div>
+                <noscript><div class="class-thumbnail" style="background-image: url('img/curso8.jpg');"></div></noscript>
+                <div class="class-content">
+                    <span class="class-number">Clase 08</span>
+                    <h2>Nuevos miembros en la parvada</h2>
+                    <p class="class-subtitle">Aprende como agregar nuevos periquitos de manera segura y armónica</p>
+                    <div class="class-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%;"></div>
+                        </div>
+                        <span>Sin empezar</span>
+                    </div>
+                    <div class="class-meta">
+                        <span><i class="fas fa-clock"></i> 12 min</span>
+                        <span><i class="fas fa-layer-group"></i> Basico</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="clases/clase-detalle-9.html" class="class-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="class-thumbnail lazy-bg" data-bg="img/curso9.jpg"></div>
+                <noscript><div class="class-thumbnail" style="background-image: url('img/curso9.jpg');"></div></noscript>
+                <div class="class-content">
+                    <span class="class-number">Clase 09</span>
+                    <h2>Bonus Especial</h2>
+                    <p class="class-subtitle">Aprende un tip especial para llevar la alimentación de tu periquito a otro nivel y fortalcer el vínculo.</p>
+                    <div class="class-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%;"></div>
+                        </div>
+                        <span>Sin empezar</span>
+                    </div>
+                    <div class="class-meta">
+                        <span><i class="fas fa-clock"></i> 9 min</span>
+                        <span><i class="fas fa-layer-group"></i> Basico</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Añade más cursos aquí con la misma estructura -->
+        </div>
+    </main>
+
+    <footer class="premium-footer">
+        <div class="footer-content">
+            <h3>Has completado un paso más en tu formación</h3>
+            <p>Si tienes alguna duda, nuestro equipo de soporte está para ayudarte.</p>
+            <div class="footer-contact">
+                <span><i class="fas fa-envelope"></i> cysarbirds@gmail.com</span>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Cysar Birds. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module" src="js/cursos.js"></script>
+
+    <script>
+        // Funcionalidad de Seguridad: Fallback para animaciones (AOS)
+        // Si la librería de animaciones no carga (offline o error), mostramos el contenido forzosamente.
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof AOS !== 'undefined') {
+                try {
+                    AOS.init({
+                        duration: 800,
+                        once: true,
+                        offset: 50,
+                    });
+                } catch (e) {
+                    console.warn('Error inicializando AOS:', e);
+                    cleanupAos();
+                }
+            } else {
+                console.warn('AOS no cargó. Mostrando contenido sin animaciones.');
+                cleanupAos();
+            }
+
+            setupLogout();
+            setupMobileMenu();
+        });
+
+        function cleanupAos() {
+            // Elimina los atributos que ocultan el contenido si JS falla
+            document.querySelectorAll('[data-aos]').forEach(el => {
+                el.removeAttribute('data-aos');
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+                el.style.visibility = 'visible';
+            });
+        }
+
+        // Script para manejar el cierre de sesión
+        function setupLogout() {
+            const logoutAction = function(event) {
+                event.preventDefault();
+                sessionStorage.removeItem('isLoggedIn');
+                window.location.href = 'login.html';
+            };
+            const logoutButton = document.getElementById('logout-button');
+            const mobileLogoutButton = document.getElementById('mobile-logout-button');
+            if (logoutButton) logoutButton.addEventListener('click', logoutAction);
+            if (mobileLogoutButton) mobileLogoutButton.addEventListener('click', logoutAction);
+        }
+
+        // Script para el menú móvil
+        function setupMobileMenu() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('open');
+                    const isOpen = mobileMenu.classList.contains('open');
+                    mobileMenuButton.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+                });
+            }
+        }
+
+        // Registro de Service Worker para PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('SW registrado en cursos', reg))
+                    .catch(e => console.log('Error SW cursos', e));
+            });
+        }
+
+        // Lazy Loading para imágenes de fondo
+        document.addEventListener("DOMContentLoaded", function() {
+            const lazyBackgrounds = document.querySelectorAll('.lazy-bg');
+
+            if ("IntersectionObserver" in window) {
+                let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.style.backgroundImage = `url('${entry.target.dataset.bg}')`;
+                            // Efecto fade-in suave al cargar
+                            entry.target.style.opacity = '1';
+                            lazyBackgroundObserver.unobserve(entry.target);
+                        }
+                    });
+                });
+
+                lazyBackgrounds.forEach(function(lazyBackground) {
+                    lazyBackgroundObserver.observe(lazyBackground);
+                });
+            } else {
+                // Fallback para navegadores MUY viejos
+                lazyBackgrounds.forEach(function(lazyBackground) {
+                    lazyBackground.style.backgroundImage = `url('${lazyBackground.dataset.bg}')`;
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

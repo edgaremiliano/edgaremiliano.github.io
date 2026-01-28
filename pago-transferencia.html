@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cysar BIRDS - Pago por Transferencia</title>
+    <link rel="stylesheet" href="../css/pago-transferencia.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body.dark-theme {
+            height: auto;
+            min-height: 100vh;
+            overflow-y: auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="dark-theme">
+    <div class="background-glow"></div>
+    <a href="index.html" class="back-to-home" title="Volver al inicio">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <div class="container">
+        <div id="payment-initial-state">
+            <div class="payment-card">
+                <div class="logo-header">
+                    <span class="super-title">cysar</span>
+                    <h1 class="section-title">BIRDS</h1>
+                </div>
+                <p class="subtitle">Completa tu pago por transferencia bancaria.</p>
+
+                <div class="important-notice">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p><strong>Importante:</strong> Es <strong>obligatorio</strong> enviar tu comprobante por WhatsApp al <strong>56 37 94 16 02</strong> para recibir tu usuario y contraseña.</p>
+                </div>
+
+                <div class="bank-details">
+                    <div class="bank-header">
+                        <i class="fas fa-university"></i>
+                        <span>Datos Bancarios</span>
+                    </div>
+                    <ul>
+                        <li>
+                            <strong>Banco:</strong>
+                            <div class="data-value">
+                                <span>BBVA</span>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>Titular:</strong>
+                            <div class="data-value">
+                                <span>Jenifer Salinas</span>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>CLABE:</strong>
+                            <div class="data-value" data-copy="EN ESPERA">
+                                <span>EN ESPERA</span>
+                                <i class="fas fa-copy copy-icon" title="Copiar"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>CUENTA:</strong>
+                            <div class="data-value" data-copy="EN ESPERA">
+                                <span>EN ESPERA</span>
+                                <i class="fas fa-copy copy-icon" title="Copiar"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>Concepto:</strong>
+                            <div class="data-value">
+                                <span>Pago curso</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <button class="action-button" style="margin-bottom: 2rem;">OPCIÓN 2</button>
+
+                <div class="bank-details">
+                    <div class="bank-header">
+                        <i class="fas fa-university"></i>
+                        <span>Datos Bancarios</span>
+                    </div>
+                    <ul>
+                        <li>
+                            <strong>Banco:</strong>
+                            <div class="data-value">
+                                <span>BANCO AZTECA</span>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>Titular:</strong>
+                            <div class="data-value">
+                                <span>Jenifer Salinas</span>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>CLABE:</strong>
+                            <div class="data-value" data-copy="127180001662981783">
+                                <span>127180001662981783</span>
+                                <i class="fas fa-copy copy-icon" title="Copiar"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>CUENTA:</strong>
+                            <div class="data-value" data-copy="25740166298178">
+                                <span>25740166298178</span>
+                                <i class="fas fa-copy copy-icon" title="Copiar"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>Concepto:</strong>
+                            <div class="data-value">
+                                <span>Pago curso</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="user-email" placeholder="Tu correo electrónico" required>
+                </div>
+
+                <button id="payment-done-btn" class="action-button">He realizado mi pago</button>
+            </div>
+        </div>
+
+        <div id="payment-confirmation-state" class="hidden">
+            <div class="payment-card">
+                <div class="confirmation-icon">
+                    <i class="fas fa-hourglass-half"></i>
+                </div>
+                <h1>Pago Pendiente de Verificación</h1>
+                <p class="subtitle">Gracias. Recuerda enviar tu comprobante por WhatsApp al <strong>56 37 94 16 02</strong> para que podamos validar tu pago y enviarte tus accesos.</p>
+                <a href="Index.html" class="action-button">Volver al Inicio</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const paymentBtn = document.getElementById('payment-done-btn');
+        const emailInput = document.getElementById('user-email');
+
+        paymentBtn.addEventListener('click', () => {
+            if (emailInput.checkValidity()) {
+                document.getElementById('payment-initial-state').classList.add('hidden');
+                document.getElementById('payment-confirmation-state').classList.remove('hidden');
+            } else {
+                emailInput.reportValidity();
+            }
+        });
+
+        document.querySelectorAll('.copy-icon').forEach(icon => {
+            icon.addEventListener('click', function() {
+                const valueToCopy = this.parentElement.dataset.copy;
+                navigator.clipboard.writeText(valueToCopy).then(() => {
+                    this.parentElement.classList.add('copied');
+                    setTimeout(() => {
+                        this.parentElement.classList.remove('copied');
+                    }, 1500);
+                }).catch(err => {
+                    console.error('Error al copiar:', err);
+                });
+            });
+        });
+    </script>
+</body>
+
+
+</html>

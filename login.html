@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cysar BIRDS - Iniciar Sesión</title>
+    <!-- CORRECCIÓN: Ruta CSS ajustada para archivo en raíz -->
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="dark-theme">
+    <div class="background-glow"></div>
+    <a href="index.html" class="back-to-home" title="Volver al inicio">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+    <div class="container">
+        <div class="login-card">
+            <div class="logo-header">
+                <span class="super-title">cysar</span>
+                <h1 class="section-title">BIRDS</h1>
+            </div>
+            <p class="subtitle">Ingresa usuario y contraseña</p>
+
+            <form id="login-form">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Correo electrónico" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Contraseña" required>
+                </div>
+                <p id="error-message" class="error-message"></p>
+                <button type="submit" class="login-button">Acceder</button>
+            </form>
+        </div>
+    </div>
+    <!-- CORRECCIÓN: Quitamos '../' porque login.html y la carpeta js están en el mismo nivel -->
+    <script type="module" src="js/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{
+    "name": "Cysar Birds - Curso de Periquitos",
+    "short_name": "Cysar Birds",
+    "start_url": "cursos.html",
+    "display": "standalone",
+    "background_color": "#0D0F12",
+    "theme_color": "#2EFF7B",
+    "orientation": "portrait-primary",
+    "icons": [{
+            "src": "img/icono.jpg",
+            "sizes": "192x192",
+            "type": "image/jpeg"
+        },
+        {
+            "src": "img/icono.jpg",
+            "sizes": "512x512",
+            "type": "image/jpeg"
+        }
+    ]
+}

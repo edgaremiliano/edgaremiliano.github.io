@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cysar BIRDS - Clase Gratuita</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2EFF7B">
+    <link rel="apple-touch-icon" href="img/curso1.jpg">
+
+    <link rel="stylesheet" href="../css/video-section.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+</head>
+
+<body class="dark-theme">
+
+    <div class="background-glow"></div>
+
+    <section class="main-content">
+        <div class="container">
+            <header class="section-header animate-on-scroll">
+                <span class="super-title">cysar</span>
+                <h1 class="section-title">BIRDS</h1>
+                <p class="section-subtitle">
+                    <span id="typewriter"></span><span class="cursor"></span>
+                </p>
+            </header>
+
+            <main class="class-content">
+                <div class="video-wrapper animate-on-scroll">
+                    <h2 class="video-title">Te regalo la primera clase</h2>
+                    <div class="video-container">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5o8JF_84PtQ?rel=0&modestbranding=1&showinfo=0" title="Clase Gratuita Audubon" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="pricing-wrapper animate-on-scroll">
+                    <div class="price-card">
+
+                        <div class="price-tag">
+                            <span class="current-price">
+                                <span class="glow-effect">
+                                    $900 <span class="currency-side">MXN</span>
+                            </span>
+                            </span>
+                            <span class="secondary-price">
+                                o $50 <span class="currency-side">USD</span>
+                            </span>
+                        </div>
+
+                        <a href="pago-transferencia.html" class="cta-button">
+                            <span>Quiero el curso completo</span>
+                        </a>
+                    </div>
+
+                    <div class="login-box animate-on-scroll">
+                        <h3 class="actions-title">¿Ya tienes tus accesos?</h3>
+                        <p class="actions-description">Ingresa tu usuario y contraseña</p>
+                        <a href="login.html" class="cta-button secondary">
+                            <span>Ir al Login</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TESTIMONIALS SECTION -->
+                <!-- Standard Reviews -->
+                <div class="review-card animate-on-scroll" style="--animation-delay: 0.2s;">
+                    <div class="review-card-header">
+                        <div class="review-stars">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "La verdad sí me abrió los ojos. Había muchas cosas que hacía mal sin saberlo y con los cambios que hice mi periquito se ve mucho más tranquilo."
+                    </p>
+                    <div class="review-author">
+                        <p class="author-name">- Ana G.</p>
+                        <p class="author-role">Estudiante del curso</p>
+                    </div>
+                </div>
+
+                <div class="review-card animate-on-scroll" style="--animation-delay: 0.4s;">
+                    <div class="review-card-header">
+                        <div class="review-stars">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Me gustó porque no es teoría aburrida. Todo es muy claro y fácil de aplicar. Desde la primera semana noté cambios en el comportamiento de mis aves."
+                    </p>
+                    <div class="review-author">
+                        <p class="author-name">- Sofía R.</p>
+                        <p class="author-role">Estudiante del curso</p>
+                    </div>
+                </div>
+
+
+            </main>
+        </div>
+    </section>
+
+    <script src="../js/animations_video.js"></script>
+    <script src="../js/dynamic-reviews.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('Service Worker registrado', reg))
+                    .catch(err => console.log('Error SW:', err));
+            });
+        }
+    </script>
+</body>
+
+</html>
