@@ -47,11 +47,11 @@
                         <div class="price-tag">
                             <span class="current-price">
                                 <span class="glow-effect">
-                                    $900 <span class="currency-side">MXN</span>
+                                    $<span id="dynamic-price-mxn">900</span> <span class="currency-side">MXN</span>
                             </span>
                             </span>
                             <span class="secondary-price">
-                                o $50 <span class="currency-side">USD</span>
+                                o $<span id="base-price-usd">50</span> <span class="currency-side">USD</span>
                             </span>
                         </div>
 
@@ -108,6 +108,8 @@
 
     <script src="../js/animations_video.js"></script>
     <script src="../js/dynamic-reviews.js"></script>
+    <!-- Script para conversión de moneda -->
+    <script src="../js/currency-converter.js"></script>
 
     <script>
         if ('serviceWorker' in navigator) {
